@@ -177,22 +177,44 @@ async def iniciar_sistema():
     registrar_evento("Iniciando sistema...")
 
     try:
-
         resposta = await fetch("src/python/dados.json")
 
         if not resposta.ok:
-            raise Exception("Não foi possível carregar o JSON.")
+            raise Exception(
+                f"Falha ao carregar dados.json. "
+                f"Status HTTP: {resposta.status}"
+            )
 
-        dados = json.loads(await resposta.text())
+        conteudo = await resposta.text()
+
+        try:
+            dados = json.loads(conteudo)
+        except json.JSONDecodeError:
+            raise ValueError(
+                "O arquivo dados.json possui formato JSON inválido."
+            )
+
+        if not isinstance(dados, dict):
+            raise ValueError(
+                "A estrutura principal do JSON deve ser um objeto."
+            )
+
+        if "frutas" not in dados:
+            raise ValueError(
+                "A lista de frutas não foi encontrada no JSON."
+            )
 
         frutas_originais = dados["frutas"]
 
-        frutas_validas = []
+        if not isinstance(frutas_originais, list):
+            raise ValueError(
+                "O campo frutas precisa ser uma lista."
+            )
 
+        frutas_validas = []
         frutas_rejeitadas = 0
 
         for fruta in frutas_originais:
-
             if validar_fruta(fruta):
                 frutas_validas.append(fruta)
             else:
@@ -210,7 +232,6 @@ async def iniciar_sistema():
         )
 
         if frutas_rejeitadas > 0:
-
             registrar_evento(
                 f"Atenção: {frutas_rejeitadas} registros rejeitados."
             )
