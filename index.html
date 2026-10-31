@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HortiTech | Painel Multimodal</title>
+
+    <link rel="stylesheet" href="src/css/estilo.css">
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.3.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2025.3.1/core.js"></script>
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <div class="logo">
+            <span>🍃</span>
+            <h1>HortiTech</h1>
+        </div>
+        <p>Painel Multimodal para Hortifruti</p>
+    </header>
+
+    <main class="container">
+
+        <section class="boas-vindas">
+            <h2>Bem-vindo ao HortiTech!</h2>
+            <p>Monitoramento inteligente de produtos e informações do hortifruti.</p>
+        </section>
+
+        <section class="indicadores">
+            <article class="indicador">
+                <span>🍎</span>
+                <div>
+                    <p>Produtos cadastrados</p>
+                    <h2 id="total-produtos">0</h2>
+                </div>
+            </article>
+
+            <article class="indicador">
+                <span>📦</span>
+                <div>
+                    <p>Estoque total</p>
+                    <h2 id="total-estoque">0</h2>
+                </div>
+            </article>
+
+            <article class="indicador">
+                <span>💻</span>
+                <div>
+                    <p>Status do sistema</p>
+                    <h2 id="status-sistema">Aguardando</h2>
+                </div>
+            </article>
+        </section>
+
+        <section class="secao">
+            <div class="titulo-secao">
+                <h2>🍓 Produtos disponíveis</h2>
+                <p>Informações cadastradas na base de dados.</p>
+            </div>
+
+            <div id="lista-frutas" class="lista-frutas">
+                <p>Carregando produtos...</p>
+            </div>
+        </section>
+
+        <section class="secao">
+            <div class="titulo-secao">
+                <h2>📡 Telemetria do sistema</h2>
+                <p>Monitoramento das operações realizadas.</p>
+            </div>
+
+            <div class="painel-telemetria">
+                <p id="telemetria-status">Aguardando inicialização...</p>
+                <p id="telemetria-eventos">Eventos registrados: 0</p>
+            </div>
+        </section>
+
+        <section class="secao">
+            <div class="titulo-secao">
+                <h2>🧠 Análise vetorial</h2>
+                <p>Processamento numérico das informações nutricionais.</p>
+            </div>
+
+            <div class="painel-analise">
+                <p id="resultado-vetorial">
+                    Aguardando processamento vetorial...
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>HortiTech © 2026 | Projeto acadêmico – Turma 3ESPA</p>
+    </footer>
+
+    <script type="py" src="src/python/main.py"></script>
+
+</body>
+</html>
