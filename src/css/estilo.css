@@ -1,0 +1,224 @@
+
+/* CONFIGURAÇÕES GERAIS */
+:root {
+    --verde-principal: #287a45;
+    --verde-escuro: #185c32;
+    --verde-claro: #e9f5ec;
+    --branco: #ffffff;
+    --fundo: #f5f8f5;
+    --texto: #26352b;
+    --cinza: #718078;
+    --sombra: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+}
+
+/* CABEÇALHO */
+.cabecalho {
+    background: var(--verde-principal);
+    color: var(--branco);
+    padding: 25px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo span {
+    font-size: 32px;
+}
+
+.logo h1 {
+    font-size: 27px;
+}
+
+.cabecalho > p {
+    font-size: 14px;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.container {
+    width: 86%;
+    max-width: 1200px;
+    margin: 35px auto;
+}
+
+.boas-vindas {
+    margin-bottom: 30px;
+}
+
+.boas-vindas h2 {
+    color: var(--verde-escuro);
+    margin-bottom: 10px;
+}
+
+.boas-vindas p {
+    color: var(--cinza);
+}
+
+/* INDICADORES */
+.indicadores {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.indicador {
+    background: var(--branco);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    transition: transform 0.3s;
+}
+
+.indicador:hover {
+    transform: translateY(-4px);
+}
+
+.indicador span {
+    font-size: 35px;
+}
+
+.indicador p {
+    color: var(--cinza);
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.indicador h2 {
+    color: var(--verde-principal);
+    font-size: 25px;
+}
+
+/* SEÇÕES */
+.secao {
+    background: var(--branco);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+}
+
+.titulo-secao {
+    margin-bottom: 22px;
+}
+
+.titulo-secao h2 {
+    color: var(--verde-escuro);
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.titulo-secao p {
+    color: var(--cinza);
+    font-size: 14px;
+}
+
+/* CATÁLOGO */
+.lista-frutas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 18px;
+}
+
+.fruta-card {
+    background: var(--fundo);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #e5eee6;
+    transition: transform 0.3s;
+}
+
+.fruta-card:hover {
+    transform: translateY(-4px);
+}
+
+.fruta-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+
+.fruta-card h3 {
+    color: var(--verde-escuro);
+    margin-bottom: 10px;
+}
+
+.fruta-card p {
+    color: var(--cinza);
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.preco {
+    color: var(--verde-principal) !important;
+    font-weight: bold;
+    font-size: 18px !important;
+}
+
+/* TELEMETRIA E ANÁLISE */
+.painel-telemetria,
+.painel-analise {
+    background: var(--verde-claro);
+    padding: 20px;
+    border-radius: 8px;
+    line-height: 1.8;
+}
+
+.painel-telemetria p,
+.painel-analise p {
+    color: var(--verde-escuro);
+    font-size: 14px;
+}
+
+/* RODAPÉ */
+footer {
+    background: var(--verde-escuro);
+    color: var(--branco);
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .container {
+        width: 92%;
+    }
+
+    .indicadores {
+        grid-template-columns: 1fr;
+    }
+
+    .cabecalho {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .secao {
+        padding: 18px;
+    }
+}
