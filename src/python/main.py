@@ -219,6 +219,7 @@ async def iniciar_sistema():
                 frutas_validas.append(fruta)
             else:
                 frutas_rejeitadas += 1
+                
 
         exibir_frutas(frutas_validas)
 
